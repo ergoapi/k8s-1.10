@@ -34,7 +34,7 @@ centos_install(){
     yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
     yum-config-manager --enable docker-ce-edge
     pkg_version=$(yum list --showduplicates 'docker-ce' | grep $VERSION | tail -1 | awk '{print $2}')
-    yum install docker-ce-$pkg_version
+    yum install -y docker-ce-$pkg_version
 }
 
 case $lsb_dist in
